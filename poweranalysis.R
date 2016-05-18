@@ -44,7 +44,7 @@ david_power_by_year=group_by(david_power_df,year)
 david_power_medians=summarize(david_power_by_year,medians=median(n))
 
 years=c(1995,2016)
-png(file='power_and_effectsize.png',width=2400,height=1500,pointsize=32)
+png(file='power_and_effectsize.png',width=2400,height=1200,pointsize=32)
 # note - pdf creation did not work properly in RStudio - exported manually to pdf
 
 par(mfrow=c(1,2))
