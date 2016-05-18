@@ -44,20 +44,20 @@ david_power_by_year=group_by(david_power_df,year)
 david_power_medians=summarize(david_power_by_year,medians=median(n))
 
 years=c(1995,2016)
-png(file='power_and_effectsize.png',width=800,height=500)
+png(file='power_and_effectsize.png',width=2400,height=1500,pointsize=32)
 # note - pdf creation did not work properly in RStudio - exported manually to pdf
 
 par(mfrow=c(1,2))
 plot(tal_data_medians,type='l',col='red',xlim=years,ylim=c(0,200),xlab='Years',
-     ylab='Median sample size',lwd=2)
+     ylab='Median sample size',lwd=4)
 points(tal_data$year-0.1,tal_data$n,pch=20,cex=0.2,col='red')
 lines(david_data_medians,type='l',col='blue',xlim=years,ylim=c(0,200),xlab='Years',
-     ylab='Median sample size',lwd=2)
+     ylab='Median sample size',lwd=4)
 points(david_data$year+0.1,david_data$n,pch=20,cex=0.2,col='blue')
-legend('topleft',legend=c('David et al.','Neurosynth'),col=c('blue','red'),lwd=c(2,2))
+legend('topleft',legend=c('David et al.','Neurosynth'),col=c('blue','red'),lwd=c(4,4))
 
 plot(tal_power_medians,type='l',xlim=years,ylim=c(0,3.2),xlab='Years',
-     ylab='Effect size with 80% power',col='red',lwd=2)
-lines(david_power_medians,col='blue',lwd=2)
-legend('topright',legend=c('David et al.','Neurosynth'),col=c('blue','red'),lwd=c(2,2))
+     ylab='Effect size with 80% power',col='red',lwd=4)
+lines(david_power_medians,col='blue',lwd=4)
+legend('topright',legend=c('David et al.','Neurosynth'),col=c('blue','red'),lwd=c(4,4))
 dev.off()
