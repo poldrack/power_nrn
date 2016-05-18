@@ -47,10 +47,10 @@ david_data_medians=david_data_medians[david_data_medians$year<=2012,]
 david_power_medians=david_power_medians[david_power_medians$year<=2012,]
 
 years=c(1995,2015)+c(-1,1)/2
-cex_points=0.2
+cex_points=0.4
 rand_jitter=0.2
 offset=0.1
-symbol_alpha=0.4
+symbol_alpha=0.3
 par(mfrow=c(1,2))
 plot(tal_data_medians,type='l',col='red',xlim=years,ylim=c(0,200),xlab='Years',
      ylab='Median sample size',lwd=4)
