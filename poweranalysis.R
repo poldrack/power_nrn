@@ -50,13 +50,14 @@ years=c(1995,2015)+c(-1,1)/2
 cex_points=0.2
 rand_jitter=0.2
 offset=0.1
+symbol_alpha=0.4
 par(mfrow=c(1,2))
 plot(tal_data_medians,type='l',col='red',xlim=years,ylim=c(0,200),xlab='Years',
      ylab='Median sample size',lwd=4)
-points(tal_data$year-offset-rand_jitter*runif(dim(tal_data)[1]),tal_data$n,pch=20,cex=cex_points,col='red')
+points(tal_data$year-offset-rand_jitter*runif(dim(tal_data)[1]),tal_data$n,pch=20,cex=cex_points,col=rgb(red=1., green=0, blue=0, alpha=symbol_alpha))
 lines(david_data_medians,type='l',col='blue',xlim=years,ylim=c(0,200),xlab='Years',
      ylab='Median sample size',lwd=4)
-points(david_data$year+offset+rand_jitter*runif(dim(david_data)[1]),david_data$n,pch=20,col='blue',cex=cex_points)
+points(david_data$year+offset+rand_jitter*runif(dim(david_data)[1]),david_data$n,pch=20,col=rgb(red=0., green=0, blue=1., alpha=symbol_alpha),cex=cex_points)
 legend('topleft',legend=c('David et al.','Neurosynth'),col=c('blue','red'),lwd=c(4,4))
 
 plot(tal_power_medians,type='l',xlim=years,ylim=c(0,3.2),xlab='Years',
